@@ -34,7 +34,7 @@ angular.module('app.controllers', [])
 
     }])
 
-// for file download and upload
+  // for file download and upload
   .controller('FileTransferController', function ($scope, $cordovaFileTransfer) {
 
     $scope.testFileDownload = function () {
@@ -46,7 +46,7 @@ angular.module('app.controllers', [])
       var filename = url.split("/").pop();
 
       // Save location
-      var targetPath = cordova.file.externalRootDirectory + filename;
+      var targetPath = cordova.file.dataDirectory + filename;
 
       $cordovaFileTransfer.download(url, targetPath, {}, true).then(function (result) {
         console.log('Success');
@@ -55,14 +55,14 @@ angular.module('app.controllers', [])
       }, function (progress) {
         // PROGRESS HANDLING GOES HERE
       });
-    }
+    };
 
     $scope.testFileUpload = function () {
       // Destination URL
       var url = "http://example.gajotres.net/upload/upload.php";
 
       //File for Upload
-      var targetPath = cordova.file.externalRootDirectory + "logo_radni.png";
+      var targetPath = cordova.file.dataDirectory + "logo_radni.png";
 
       // File name only
       var filename = targetPath.split("/").pop();
