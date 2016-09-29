@@ -1,5 +1,5 @@
 <ion-view title="所有视频" id="page2">
-  <ion-content padding="true" class="has-header">
+  <ion-content ng-controller="FileTransferController" padding="true" class="has-header">
     <ion-list id="page2-list4">
 
       <ion-item ng-repeat="video in video_list" class="item item-thumbnail-left">
@@ -9,7 +9,7 @@
 
         <div class="row">
           <div class="col text-right">
-            <button class="button button-dark">
+            <button ng-click="testFileDownload()" class="button button-dark">
               下载
             </button>
           </div>
@@ -19,3 +19,9 @@
     </ion-list>
   </ion-content>
 </ion-view>
+
+
+<!--<ion-content ng-controller="FileTransferController">-->
+  <!--<button class="button button-full button-positive" ng-click="testFileDownload()">Test File Download</button>-->
+  <!--<button class="button button-full button-royal" ng-click="testFileUpload()">Test File Upload</button>-->
+<!--</ion-content>-->
