@@ -4,8 +4,8 @@ angular.module('app.controllers', [])
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams, $http) {
-  $http.get("http://www.w3schools.com/angular/customers.php").then(function(response){
-    $scope.video_list = response.data.records;
+  $http.get("https://api.myjson.com/bins/2uyi4").then(function(response){
+    $scope.video_list = response.data;
   });
 }])
 
