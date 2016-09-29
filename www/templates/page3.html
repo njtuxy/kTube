@@ -1,18 +1,23 @@
-<ion-view title="收藏" id="page3">
+<ion-view title="我的收藏" id="page3">
     <ion-content padding="true" class="has-header">
         <ion-list id="page3-list6">
-            <ion-item class="item-thumbnail-left" id="page3-list-item17">
-                <h2>Item</h2>
-            </ion-item>
-            <ion-item class="item-thumbnail-left" id="page3-list-item18">
-                <h2>Item</h2>
-            </ion-item>
-            <ion-item class="item-thumbnail-left" id="page3-list-item19">
-                <h2>Item</h2>
-            </ion-item>
-            <ion-item class="item-thumbnail-left" id="page3-list-item20">
-                <h2>Item</h2>
-            </ion-item>
+          <ion-item ng-repeat="video in favorite_video_list" class="item item-thumbnail-left">
+            <img ng-src="{{video.thumbnailUrl}}">
+            <h2>{{video.title}}</h2>
+            <p>best English songs for kids</p>
+
+            <div class="row">
+              <div class="col text-right">
+                <button class="button button-dark">
+                  下载
+                </button>
+              </div>
+            </div>
+          </ion-item>
+
         </ion-list>
     </ion-content>
 </ion-view>
+
+
+
