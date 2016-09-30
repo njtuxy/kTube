@@ -4,7 +4,7 @@ angular.module('app.controllers', [])
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
     function ($scope, $stateParams, $http) {
-      $http.get("https://api.myjson.com/bins/2uyi4").then(function (response) {
+      $http.get("https://api.myjson.com/bins/1tg9s").then(function (response) {
         $scope.video_list = response.data;
       });
     }])
@@ -46,11 +46,14 @@ angular.module('app.controllers', [])
       var filename = url.split("/").pop();
 
       // Save location
-      var targetPath = cordova.file.dataDirectory + filename;
+      var targetPath = cordova.file.externalRootDirectory + "kTbue/" + filename;
 
       $cordovaFileTransfer.download(url, targetPath, {}, true).then(function (result) {
-        console.log('Success');
+        console.log('999999999999999999999999999999999999999999999 success' + targetPath);
+
+        $scope.fileLocation = targetPath
       }, function (error) {
+        console.log('999999999999999999999999999999999999999999999 error');
         console.log('Error');
       }, function (progress) {
         // PROGRESS HANDLING GOES HERE
@@ -62,7 +65,7 @@ angular.module('app.controllers', [])
       var url = "http://example.gajotres.net/upload/upload.php";
 
       //File for Upload
-      var targetPath = cordova.file.dataDirectory + "logo_radni.png";
+      var targetPath = cordova.file.externalRootDirectory + "logo_radni.png";
 
       // File name only
       var filename = targetPath.split("/").pop();
