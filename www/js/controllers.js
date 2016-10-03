@@ -57,6 +57,7 @@ angular.module('app.controllers', [])
         $scope.play_info = "Error when download the png file" + error.message
       }, function (progress) {
         // PROGRESS HANDLING GOES HERE
+        $scope.downloadProgress = (progress.loaded / progress.total) * 100;
       });
     };
 

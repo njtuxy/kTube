@@ -12,12 +12,14 @@
             <span ng-show="!video.downloaded">
               <button ng-click="testFileDownload(video.url)" class="button button-dark">
               下载
+                {{downloadProgress}}
              </button>
             </span>
 
             <span ng-show="video.downloaded">
               <button ng-click="openFile(fileLocation)" class="button button-dark">
               播放
+
              </button>
             </span>
 
@@ -28,9 +30,3 @@
     </ion-list>
   </ion-content>
 </ion-view>
-
-
-<!--<ion-content ng-controller="FileTransferController">-->
-<!--<button class="button button-full button-positive" ng-click="testFileDownload()">Test File Download</button>-->
-<!--<button class="button button-full button-royal" ng-click="testFileUpload()">Test File Upload</button>-->
-<!--</ion-content>-->
