@@ -14,8 +14,11 @@
             <!--<span ng-show="!video.downloaded">-->
               <button ng-click="testFileDownload(video.download_url)" class="button button-dark">
               下载
-                {{downloadProgress}}%
+                <!--{{downloadProgress}}-->
              </button>
+              <progress id="progressbar" max="100" value="{{ downloadProgress }}"> </progress>
+              <div id="progressbarlabel">{{ downloadProgress }} %</div>
+
             </span>
 
             <span>
