@@ -57,7 +57,7 @@ angular.module('app.controllers', [])
         $scope.play_info = "视频下载失败!" + error.message
       }, function (progress) {
         // PROGRESS HANDLING GOES HERE
-        $scope.downloadProgress = (progress.loaded / progress.total) * 100;
+        $scope.downloadProgress = Math.floor(progress.loaded / progress.total * 100);
       });
     };
 
