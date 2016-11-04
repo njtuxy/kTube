@@ -4,8 +4,8 @@ angular.module('app.controllers', [])
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
     function ($scope, $stateParams, $http) {
-      $http.get("https://api.myjson.com/bins/3k1cw").then(function (response) {
-        $scope.video_list = response.data;
+      $http.get("https://api.myjson.com/bins/50vei").then(function (response) {
+        $scope.video_list = response.data.videos;
       });
     }])
 
@@ -40,8 +40,8 @@ angular.module('app.controllers', [])
     $scope.testFileDownload = function (file_url) {
 
       // File for download
-      var url = "http://www.gajotres.net/wp-content/uploads/2015/04/logo_radni.png";
-      // var url = file_url;
+      // var url = "http://www.gajotres.net/wp-content/uploads/2015/04/logo_radni.png";
+      var url = file_url;
 
       // File name only
       var filename = url.split("/").pop();
@@ -51,10 +51,10 @@ angular.module('app.controllers', [])
       var targetPath = cordova.file.externalRootDirectory + "kTube/" + filename;
 
       $cordovaFileTransfer.download(url, targetPath, {}, true).then(function (result) {
-        $scope.play_info = "sccuessfully downloed the pic!";
+        $scope.play_info = "视频下载成功!";
         $scope.fileLocation = targetPath;
       }, function (error) {
-        $scope.play_info = "Error when download the png file" + error.message
+        $scope.play_info = "视频下载失败!" + error.message
       }, function (progress) {
         // PROGRESS HANDLING GOES HERE
         $scope.downloadProgress = (progress.loaded / progress.total) * 100;
@@ -62,10 +62,10 @@ angular.module('app.controllers', [])
     };
 
     $scope.openFile = function (fileLocation) {
-      $cordovaFileOpener2.open( fileLocation,'image/png'
+      $cordovaFileOpener2.open( fileLocation,'video/mp4'
       ).then(function() {
         // Success!
-        $scope.play_info = "going to play the image"
+        $scope.play_info = "准备播放视频"
       }, function(err) {
         // An error occurred. Show a message to the user
         $scope.play_info = "some error " + err.status + " with details: " + err.message

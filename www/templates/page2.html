@@ -4,19 +4,22 @@
       {{play_info}}
       <ion-item ng-repeat="video in video_list" class="item item-thumbnail-left">
         <img ng-src="{{video.thumbnailUrl}}">
-        <h2>{{video.title}}</h2>
+        <h2>{{video.name}}</h2>
         <p>best English songs for kids</p>
 
         <div class="row">
           <div class="col text-right">
-            <span ng-show="!video.downloaded">
-              <button ng-click="testFileDownload(video.url)" class="button button-dark">
+
+            <span>
+            <!--<span ng-show="!video.downloaded">-->
+              <button ng-click="testFileDownload(video.download_url)" class="button button-dark">
               下载
                 {{downloadProgress}}
              </button>
             </span>
 
-            <span ng-show="video.downloaded">
+            <span>
+            <!--<span ng-show="video.downloaded">-->
               <button ng-click="openFile(fileLocation)" class="button button-dark">
               播放
 
