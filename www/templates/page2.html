@@ -5,14 +5,14 @@
       <ion-item ng-repeat="video in video_list" class="item item-thumbnail-left">
         <img ng-src="{{video.thumbnailUrl}}">
         <h2>{{video.name}}</h2>
-        <p>best English songs for kids</p>
+        <p>{{video.download_url}}</p>
 
         <div class="row">
           <div class="col text-right">
 
             <span>
             <!--<span ng-show="!video.downloaded">-->
-              <button ng-click="testFileDownload(video.download_url)" class="button button-dark">
+              <button ng-click="startFileDownload(video.download_url)" class="button button-dark">
               下载
                 <!--{{downloadProgress}}-->
              </button>

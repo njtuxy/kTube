@@ -37,7 +37,7 @@ angular.module('app.controllers', [])
   // for file download and upload
   .controller('FileTransferController', function ($scope, $cordovaFileTransfer, $cordovaFileOpener2) {
 
-    $scope.testFileDownload = function (file_url) {
+    $scope.startFileDownload = function (file_url) {
 
       // File for download
       // var url = "http://www.gajotres.net/wp-content/uploads/2015/04/logo_radni.png";
