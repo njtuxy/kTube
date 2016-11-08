@@ -12,3 +12,4 @@ ionic/project
 ionic.project
 .DS_Store
 .editorconfig
+www/lib

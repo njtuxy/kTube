@@ -1,11 +1,17 @@
-angular.module('app.controllers', [])
+angular.module('app.controllers', ['ngStorage'])
 
-  .controller('page2Ctrl', ['$scope', '$stateParams', '$http', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+  .controller('page2Ctrl', ['$scope', '$stateParams', '$http', '$localStorage', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-    function ($scope, $stateParams, $http) {
-      $http.get("https://api.myjson.com/bins/50vei").then(function (response) {
+    function ($scope, $stateParams, $http, $localStorage) {
+      $http.get("https://api.myjson.com/bins/4bv98").then(function (response) {
         $scope.video_list = response.data.videos;
+        $localStorage.vList = response.data.videos;
+
+        $scope.load = function () {
+          $scope.testData = $localStorage.vList[0].id;
+        };
+
       });
     }])
 
@@ -49,6 +55,7 @@ angular.module('app.controllers', [])
 
       // Save location
       var targetPath = cordova.file.externalRootDirectory + "kTube/" + filename;
+
 
       $cordovaFileTransfer.download(url, targetPath, {}, true).then(function (result) {
         $scope.play_info = "视频下载成功!";
