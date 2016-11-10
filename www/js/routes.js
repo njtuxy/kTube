@@ -7,8 +7,8 @@ angular.module('app.routes', [])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-    
-  
+
+
 
       .state('tabsController.page2', {
     url: '/page2',
@@ -48,6 +48,6 @@ angular.module('app.routes', [])
 
 $urlRouterProvider.otherwise('/page1/page2')
 
-  
+
 
 });

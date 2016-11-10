@@ -1,0 +1,29 @@
+{
+  "gitda0aa00aa00aa00aa00aa00aa00aa":
+  {
+    "name": "video1",
+    "download_url": "https://storage.googleapis.com/ktube/SampleVideo_1280x720_1mb.mp4",
+    "thumbnailUrl":"http://placehold.it/150/30ac17",
+    "downloaded": false,
+    "download_progress": 0,
+    "file_local_location": ""
+
+  },
+  "gitdsa00aa00aa00aa00aa00aa00aa00":
+  {
+    "name": "video2",
+    "download_url": "https://storage.googleapis.com/ktube/SampleVideo_1280x720_2mb.mp4",
+    "thumbnailUrl":"http://placehold.it/150/dff9f6",
+    "downloaded": false,
+    "download_progress": 0,
+    "file_local_location": ""
+  },
+  "gitdb0bb00bb00bb00bb00bb00bb00bb": {
+    "name": "video3",
+    "download_url": "https://storage.googleapis.com/ktube/SampleVideo_1280x720_5mb.mp4",
+    "thumbnailUrl":"http://placehold.it/150/1941e9",
+    "downloaded": false,
+    "download_progress": 0,
+    "file_local_location": ""
+  }
+}

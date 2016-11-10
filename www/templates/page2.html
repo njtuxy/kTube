@@ -2,31 +2,34 @@
   <ion-content ng-controller="FileTransferController" padding="true" class="has-header">
     <ion-list id="page2-list4">
       {{play_info}}
-      <ion-item ng-repeat="video in video_list" class="item item-thumbnail-left">
-        <img ng-src="{{video.thumbnailUrl}}">
-        <h2>{{video.name}}</h2>
-        <p>{{video.download_url}}</p>
+      <ion-item ng-repeat="(v_id,v_detail) in $storage track by v_id" class="item item-thumbnail-left">
+        <img ng-src="{{v_detail.thumbnailUrl}}">
+        <h2>{{v_detail.name}}</h2>
+        <!--<p>{{video.download_url}}</p>-->
+        <p>{{v_id}}</p>
+        <p>{{v_detail.downloaded}}</p>
 
         <div class="row">
           <div class="col text-right">
 
-            <span>
-              <!--<button ng-click="load()" class="button button-dark"> 测试 </button>-->
+            <!--<span>-->
+              <!--<button ng-click="toggleDownloaded(v_id)" class="button button-dark"> 测试 </button>-->
+            <!--</span>-->
 
-              <!--{{testData}}-->
 
-            <!--<span ng-show="!video.downloaded">-->
-              <button ng-click="startFileDownload(video.download_url)" class="button button-dark">
+            <span ng-show="!v_detail.downloaded">
+              <button ng-click="startFileDownload(v_id)" class="button button-dark">
               下载
                 <!--{{downloadProgress}}-->
              </button>
-              <progress id="progressbar" max="100" value="{{ downloadProgress }}"> </progress>
-              <div id="progressbarlabel">{{ downloadProgress }} %</div>
+
+              <progress id="progressbar" max="100" value="{{ $storage[v_id].download_progress }}"> </progress>
+              <div id="progressbarlabel">{{ $storage[v_id].download_progress }} %</div>
 
             </span>
 
-            <span>
-            <!--<span ng-show="video.downloaded">-->
+            <!--<span>-->
+            <span ng-show="v_detail.downloaded">
               <button ng-click="openFile(fileLocation)" class="button button-dark">
               播放
 
