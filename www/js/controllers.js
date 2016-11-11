@@ -73,12 +73,12 @@ angular.module('app.controllers', ['ngStorage'])
 
         $cordovaFileTransfer.download(url, targetPath, {}, true).then(function (result) {
           $scope.play_info = "视频下载成功!";
-          $scope.fileLocation = targetPath;
+          $localStorage[v_id].file_location = targetPath;
           $localStorage[v_id].downloaded = true
         }, function (error) {
           $scope.play_info = "视频下载失败!" + error.message
         }, function (progress) {
-          $localStorage[v_id].downloaded = false
+          $localStorage[v_id].downloaded = false;
           // PROGRESS HANDLING GOES HERE
           $localStorage[v_id].download_progress = Math.floor(progress.loaded / progress.total * 100);
           // $scope.downloadProgress =
